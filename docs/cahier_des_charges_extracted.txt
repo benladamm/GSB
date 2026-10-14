@@ -1,0 +1,260 @@
+Description du 
+projet de site web
+Ce document est donné à titre d’exemple et pourra vous servir de trame pour la présentation d’un projet de site web. 
+Il pourra être simplifié en fonction de la complexité du projet. 
+Société :
+Laboratoire Galaxy Swiss Bourdin (GSB)
+Adresse :
+Siège administratif en Europe, situé à Paris
+Contact projet :
+Direction des Systèmes d’Information (DSI)
+Fonction :
+Maîtrise d’ouvrage / pilotage du projet
+Tél :
+À définir
+Fax :
+Non communiqué dans le sujet
+Mail
+À définir
+Projet pédagogique BTS SIO – 2e année, option SLAM
+Version :
+01 – 2026
+SOMMAIRE
+1INTRODUCTION3
+2CONTEXTE3
+2.1PRESENTATION DE L’ENTREPRISE3
+2.2OBJECTIF DE L’ENTREPRISE3
+2.3PRESENTATION DU PROJET WEB3
+2.4EXISTANT DANS L’ENTREPRISE4
+2.5ENVIRONNEMENT DE L’ENTREPRISE4
+3EXPRESSION DES BESOINS4
+3.1CONTRAINTES TECHNIQUES (facultatif)4
+3.2ORGANISATION DU PROJET5
+3.3PLANNING PREVISIONNEL6
+3.4CIBLES DU SITE WEB6
+3.5ELEMENTS DE COMMUNICATION7
+4PRECISIONS FONCTIONNELLES7
+4.1CONTENU ET ARBORESCENCE7
+4.2FONCTIONS DU SITE9
+4.3GESTION DU SITE WEB11
+5LE ROLE DU PRESTATAIRE12
+5.1LA CONCEPTION GRAPHIQUE - COMMUNICATION12
+5.2DEPOT DE NOM DE DOMAINE13
+5.3REPRISE DE L’EXISTANT (facultatif)13
+5.4REDACTION DE CONTENU14
+5.5FOURNITURES DIVERSES14
+5.6LES DEVELOPPEMENTS SPECIFIQUES (facultatif)14
+5.7HEBERGEMENT15
+5.8FORMATION15
+5.9ASSISTANCE ET MAINTENANCE15
+5.10PROMOTION ET REFERENCEMENT16
+5.11ANALYSE DU TRAFIC17
+5.12SECURITE17
+5.13OPTIONS17
+6LES LIVRABLES ATTENDUS18
+7CRITERE DE SELECTION DE PRESTATAIRES18
+8REMARQUES COMPLEMENTAIRES19
+8.1CONDITIONS DE REGLEMENT ET DE FACTURATION (facultatif)19
+8.2BUDGET DU PROJET (facultatif)20
+8.3GRILLE D’OFFRE DE PRIX20
+INTRODUCTION
+Ce cahier des charges présente le projet de conception et de développement d’une application web pour le laboratoire Galaxy Swiss Bourdin (GSB). Le document formalise les besoins fonctionnels, les contraintes techniques, l’organisation du projet et les livrables attendus. Le projet est réalisé dans un cadre pédagogique par des étudiants de deuxième année de BTS SIO, option SLAM, en s’appuyant sur le sujet fourni par la GSB.
+CONTEXTE
+PRESENTATION DE L’ENTREPRISE
+Le laboratoire pharmaceutique Galaxy Swiss Bourdin (GSB) est une entreprise internationale issue de la fusion de deux grands groupes du secteur médical. La fusion a permis de regrouper des activités de recherche, de production et de distribution de médicaments. Son siège administratif en Europe est situé à Paris. L’entreprise possède une organisation importante comprenant notamment la recherche, la production, la communication, les ressources humaines et une force commerciale composée de visiteurs médicaux présents en France et à l’international.
+OBJECTIF DE L’ENTREPRISE
+GSB souhaite moderniser ses outils numériques afin d’améliorer les échanges avec les professionnels de santé et d’optimiser ses performances commerciales. L’objectif est notamment de renforcer la diffusion de ses produits, de faciliter les commandes et d’obtenir un meilleur suivi de l’activité commerciale.
+PRESENTATION DU PROJET WEB
+Le projet consiste à concevoir et développer une application web de type e-commerce destinée aux professionnels de santé. La plateforme devra permettre aux utilisateurs authentifiés de consulter le catalogue de médicaments, gérer un panier, passer des commandes et consulter leur historique. Elle devra également fournir une interface d’administration et une gestion des fournisseurs.
+EXISTANT DANS L’ENTREPRISE
+GSB dispose d’une infrastructure informatique présentée comme solide et sécurisée. Toutefois, le système d’information actuel présente des limites dans la gestion de la relation avec les professionnels de santé. Les outils existants ne permettent pas une interaction directe et fluide avec les partenaires médicaux et certains processus commerciaux restent dématérialisés ou peu optimisés. Le projet vise donc à centraliser et améliorer ces services au moyen d’une application web.
+ENVIRONNEMENT DE L’ENTREPRISE
+L’application s’inscrit dans un environnement professionnel pharmaceutique où la sécurité, la confidentialité des comptes et la fiabilité des données sont essentielles. Le site devra être moderne, accessible et performant, tout en restant simple à utiliser pour les professionnels de santé. Aucune liste précise de sites concurrents n’est fournie dans le sujet GSB ; cette veille pourra être réalisée pendant la phase d’analyse.
+EXPRESSION DES BESOINS
+La solution devra répondre aux besoins suivants : authentifier les professionnels de santé avec des comptes créés par un administrateur ; permettre la consultation et la recherche dans le catalogue ; gérer un panier et créer des commandes ; consulter l’historique des commandes ; administrer les utilisateurs, produits et commandes ; permettre aux fournisseurs partenaires de proposer et gérer leurs produits sous contrôle de l’administrateur.
+ORGANISATION DU PROJET
+Le projet sera réalisé par une équipe d’étudiants de deuxième année de BTS SIO option SLAM. Un responsable de projet sera désigné au sein du groupe pour coordonner les tâches et centraliser les échanges. Le travail sera suivi avec un outil collaboratif de gestion de projet tel que Trello ou Jira. Les tâches seront réparties entre analyse, conception, développement front-end, développement back-end, base de données, tests et documentation.
+PLANNING PREVISIONNEL
+Le planning suivra les quatre grandes phases demandées dans le sujet : analyse des besoins, conception et maquettage, développement et tests, puis production/déploiement. Un diagramme de Gantt devra présenter les tâches, leur durée, leurs dépendances et les étapes de validation. Les dates exactes seront définies par l’équipe pédagogique et le groupe d’étudiants.
+CIBLES DU SITE WEB
+La cible principale est constituée des professionnels de santé autorisés à utiliser la plateforme, notamment les médecins, pharmaciens et autres profils habilités. Une seconde cible est constituée des administrateurs GSB qui gèrent les comptes, les produits et les commandes. Une troisième cible correspond aux laboratoires partenaires/fournisseurs qui disposent d’un accès spécifique pour gérer leurs produits, sous contrôle de l’administrateur.
+Cible
+Objectifs/attentes
+Priorité
+Professionnel de santé
+Consulter le catalogue, rechercher un médicament, gérer un panier, passer une commande et consulter son historique.
+1
+Administrateur GSB
+Créer/modifier/supprimer les comptes, gérer les produits et fournisseurs, consulter les commandes et contrôler la plateforme.
+1
+Fournisseur partenaire
+Ajouter et gérer les produits proposés à la vente, sous contrôle de l’administrateur.
+2
+ELEMENTS DE COMMUNICATION
+L’interface devra transmettre une image professionnelle, fiable et moderne, cohérente avec le secteur pharmaceutique. L’information devra être présentée de manière claire afin de faciliter la recherche de médicaments et la gestion des commandes. La navigation devra rester simple et l’application devra être responsive afin de s’adapter aux différentes tailles d’écran.
+PRECISIONS FONCTIONNELLES
+CONTENU ET ARBORESCENCE 
+L’arborescence proposée est la suivante : Accueil/connexion ; espace personnel ; catalogue des médicaments ; détail d’un médicament ; recherche et filtres ; panier ; validation de commande ; historique des commandes ; espace fournisseur ; espace administrateur ; gestion des utilisateurs ; gestion des produits ; gestion des fournisseurs ; consultation des commandes. L’accès aux différentes rubriques dépendra du rôle de l’utilisateur.
+Thème 
+Sous-thème
+Description/but de la rubrique
+Accueil / Connexion
+Aucun
+Page d’accueil et authentification des utilisateurs.
+Espace personnel
+Profil / mot de passe
+Consultation et modification des informations personnelles.
+Catalogue
+Catégories / fiches produits
+Consultation des médicaments avec nom, description, image, prix HT et TTC.
+Recherche
+Nom / catégorie / critères
+Recherche et filtrage des produits.
+Panier
+Articles / quantités
+Ajout, modification des quantités, suppression et calcul des totaux HT/TTC.
+Commandes
+Validation / historique
+Création d’une commande et consultation de l’historique et de ses détails.
+Administration
+Utilisateurs / produits / commandes
+Gestion complète de la plateforme par les administrateurs.
+Fournisseurs
+Produits proposés
+Gestion des produits par les laboratoires partenaires, sous contrôle administrateur.
+FONCTIONS DU SITE
+Les fonctions attendues sont : authentification sécurisée avec comptes créés par les administrateurs ; changement du mot de passe lors de la première connexion ; consultation et modification des informations personnelles ; catalogue organisé par catégories ; fiche produit avec nom, description, image, prix HT et prix TTC ; recherche et filtrage ; ajout, modification des quantités et suppression des articles du panier ; calcul des totaux HT et TTC ; création de commande ; consultation de l’historique et du détail des commandes ; administration des utilisateurs, produits et commandes ; gestion des fournisseurs partenaires.
+Titre
+Sous titre
+Lancement
+Analyse
+Besoins, acteurs, contraintes, cahier des charges
+Phase 1
+Conception
+Maquettes, architecture, MCD/MLD/MPD
+Phase 2
+Développement
+React, Node.js, API, base de données
+Phase 3
+Tests et intégration
+Tests fonctionnels, sécurité, corrections
+Phase 4
+Production / démonstration
+Déploiement de démonstration et présentation
+Phase 5
+Nom
+Type
+Remarque
+Nom
+Texte
+Nom du médicament.
+Description
+Texte
+Présentation et informations du produit.
+Image
+Fichier/image
+Illustration du médicament.
+Prix HT
+Numérique
+Prix hors taxes.
+Prix TTC
+Numérique
+Prix toutes taxes comprises.
+Catégorie
+Texte / clé étrangère
+Catégorie du médicament.
+GESTION DU SITE WEB
+La gestion courante du site sera réalisée par les utilisateurs habilités selon leur rôle. Les administrateurs pourront créer, modifier et supprimer les comptes professionnels, gérer le catalogue et consulter les commandes. Les fournisseurs partenaires pourront ajouter et gérer leurs propres produits, sous contrôle de l’administrateur. Les étudiants développeurs assureront, dans le cadre pédagogique, la maintenance et les corrections nécessaires pendant la phase de projet.
+LE ROLE DU PRESTATAIRE
+Dans le cadre pédagogique, le rôle du prestataire est tenu par l’équipe de développement étudiante. Elle prend en charge l’analyse, la conception, le développement, les tests, la documentation et la préparation de la démonstration. Les choix et limites du projet devront être documentés dans les livrables.
+ LA CONCEPTION GRAPHIQUE - COMMUNICATION
+L’équipe devra proposer une interface claire et professionnelle. La navigation devra être cohérente entre les différentes pages, avec une distinction visuelle des espaces professionnel, fournisseur et administrateur. Le site devra être responsive et utilisable sur ordinateur, tablette et mobile. Les maquettes devront être validées avant le développement complet de l’interface.
+DEPOT DE NOM DE DOMAINE
+Aucun nom de domaine ni procédure de dépôt n’est précisé dans le sujet GSB. Pour le projet pédagogique, l’application pourra être exécutée sur un environnement local ou sur un serveur de démonstration mis à disposition par l’établissement. Si une mise en ligne est demandée, le nom de domaine et l’hébergement seront définis avec l’équipe pédagogique.
+REPRISE DE L’EXISTANT (facultatif)
+Le sujet ne prévoit pas explicitement de migration d’un ancien site web. La reprise de données existantes n’est donc pas incluse dans le périmètre initial. Si des données de test sont fournies, elles pourront être importées dans la base relationnelle selon un format défini pendant la conception.
+REDACTION DE CONTENU
+Les contenus nécessaires au catalogue et aux différentes interfaces seront fournis ou préparés dans le cadre du projet pédagogique. Les données utilisées pour les démonstrations devront être des données de test. Les textes de l’interface devront rester clairs et adaptés aux utilisateurs visés.
+FOURNITURES DIVERSES
+Le sujet GSB fournit les besoins fonctionnels et les contraintes techniques. L’équipe devra produire les maquettes, les éléments d’interface, le script de création de la base de données et la documentation. Les images utilisées pour les produits seront des ressources de démonstration ou des contenus dont l’utilisation est autorisée.
+LES DEVELOPPEMENTS SPECIFIQUES (facultatif)
+Les développements spécifiques correspondent principalement à l’API Node.js, à la gestion des rôles et des droits, à l’authentification, au catalogue, à la recherche et au filtrage, au panier, aux commandes, à l’espace personnel, à l’espace fournisseur et à l’interface d’administration. Le code devra être structuré, commenté lorsque nécessaire, testé et maintenable.
+HEBERGEMENT
+Pour le projet pédagogique, une solution d’hébergement n’est pas imposée par le sujet. Le développement pourra être réalisé dans un environnement local puis présenté sur un environnement de démonstration. Si un hébergement est mis en place, il devra permettre l’exécution de Node.js et l’accès à la base relationnelle, avec des sauvegardes adaptées et des mesures de sécurité.
+ FORMATION
+Une courte documentation devra permettre à un administrateur de comprendre les principales fonctions de l’application : gestion des utilisateurs, gestion des produits, gestion des fournisseurs et consultation des commandes. Une démonstration orale de l’application sera également réalisée à la fin du projet.
+ ASSISTANCE ET MAINTENANCE
+Pendant le projet, l’équipe devra corriger les anomalies identifiées lors des tests et des démonstrations. Les corrections importantes devront être tracées dans l’outil de gestion de projet. Une documentation technique devra permettre à une autre personne de comprendre l’organisation du projet et de reprendre son développement.
+PROMOTION ET REFERENCEMENT
+Le référencement naturel n’est pas un objectif prioritaire du projet, car l’application est destinée à des professionnels de santé disposant d’un compte. Les efforts porteront principalement sur l’ergonomie, l’accessibilité, la clarté de l’interface et la facilité d’accès aux fonctionnalités après authentification.
+ ANALYSE DU TRAFIC
+Aucun outil de suivi du trafic n’est imposé par le sujet. Dans le cadre pédagogique, les indicateurs pourront être limités à des informations techniques utiles aux tests et à la démonstration. Si l’application était réellement mise en production, des outils de suivi devraient être étudiés en tenant compte des règles de confidentialité et de protection des données.
+SECURITE
+La sécurité constitue une exigence importante du projet. L’application devra notamment protéger l’authentification et les mots de passe, contrôler les droits selon le rôle de l’utilisateur, empêcher l’accès aux données d’un autre utilisateur, valider les données reçues par l’API et sécuriser les échanges entre le front-end, le back-end et la base de données. Les accès administrateur et fournisseur devront être protégés. Les sauvegardes et mises à jour de sécurité devront être prévues pour un environnement de production.
+ OPTIONS
+Les évolutions pourront être proposées après la réalisation du périmètre principal, sans compromettre les fonctionnalités obligatoires. Exemples : amélioration de la recherche, tableaux de bord administrateur, génération de documents de commande, notifications ou amélioration des statistiques. Ces évolutions seront réalisées uniquement si le temps disponible le permet.
+LES LIVRABLES ATTENDUS
+Les livrables attendus sont : le code source complet du front-end et du back-end ; le script de création de la base de données ; le cahier des charges ; le MCD, le MLD et le MPD le cas échéant ; le diagramme de Gantt ; les maquettes et documents de conception utiles ; la documentation d’installation et d’utilisation ; et une démonstration de l’application fonctionnelle.
+CRITERE DE SELECTION DE PRESTATAIRES
+Dans le cadre pédagogique, les critères d’évaluation pourront porter sur : la compréhension du besoin et le respect du cahier des charges ; le respect des technologies imposées ; la qualité de l’architecture et du code ; la qualité de la base de données et des modèles Merise ; la sécurité ; la fonctionnalité de l’application ; la qualité de l’interface ; l’organisation du travail ; le respect du planning ; la qualité de la documentation et de la démonstration.
+REMARQUES COMPLEMENTAIRES
+CONDITIONS DE REGLEMENT ET DE FACTURATION (facultatif)
+Sans objet dans le cadre de ce projet pédagogique. Aucun prix réel de prestation n’est prévu par le sujet fourni.
+BUDGET DU PROJET (facultatif)
+Le sujet GSB ne fournit pas de budget. Dans le cadre pédagogique, le projet est considéré comme réalisé avec les outils et ressources disponibles dans l’établissement. Les éventuels coûts d’hébergement ou de services supplémentaires devront être validés avant leur utilisation.
+GRILLE D’OFFRE DE PRIX
+Sans objet dans le cadre pédagogique. La grille ci-dessous peut être conservée à titre de modèle mais les montants réels ne sont pas fournis dans le sujet GSB.
+Objet
+Montant HT en €
+Précisions sur le  travail réalisé, temps passé…
+Gestion de projet
+Non applicable
+Projet pédagogique BTS SIO.
+Conception / maquettes
+Non applicable
+Analyse et conception réalisées par les étudiants.
+Développement React
+Non applicable
+Développement front-end.
+Développement Node.js / API
+Non applicable
+Développement back-end et API.
+Base de données
+Non applicable
+MCD, MLD, MPD et script de création.
+Tests / sécurité
+Non applicable
+Tests fonctionnels et contrôles de sécurité.
+Documentation / démonstration
+Non applicable
+Documentation et présentation finale.
+Hébergement
+À définir
+Selon l’environnement de démonstration retenu.
+Total HT
+—
+Sans objet
+Total TTC
+—
+Sans objet
+Objet
+Montant HT en €
+Précisions sur le  travail réalisé, temps passé…
+Hébergement
+À définir
+Environnement de démonstration.
+Référencement
+Non applicable
+Pas un objectif prioritaire.
+Maintenance préventive et corrective
+Non applicable
+Assurée dans le cadre du projet pédagogique.
+Autres
+Non applicable
+Aucun coût réel prévu.
+Total HT
+—
+Sans objet
+Total TTC
+—
+Sans objet

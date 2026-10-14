@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2200 1400" width="2200" height="1400" style="background-color: #FFFFFF; font-family: Arial, Helvetica, sans-serif;">
+  <rect width="100%" height="100%" fill="#FFFFFF" />
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#334155" />
+    </marker>
+  </defs>
+
+  <!-- FK Relationships -->
+  <g id="foreign_keys">
+    <line x1="480" y1="150" x2="330" y2="150" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)" />
+    <g transform="translate(405.0,142.0)">
+      <rect x="-28.75" y="-8" width="57.5" height="16" rx="3" fill="#FFFFFF" stroke="#94A3B8" stroke-width="0.8" />
+      <text x="0" y="3.5" font-size="9.5" font-weight="bold" fill="#0F172A" text-anchor="middle">id_role</text>
+    </g>
+    <line x1="1340" y1="520" x2="1340" y2="460" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)" />
+    <g transform="translate(1340.0,482.0)">
+      <rect x="-51.5" y="-8" width="103.0" height="16" rx="3" fill="#FFFFFF" stroke="#94A3B8" stroke-width="0.8" />
+      <text x="0" y="3.5" font-size="9.5" font-weight="bold" fill="#0F172A" text-anchor="middle">id_fournisseur</text>
+    </g>
+    <line x1="1540" y1="600" x2="1750" y2="600" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)" />
+    <g transform="translate(1645.0,592.0)">
+      <rect x="-45.0" y="-8" width="90.0" height="16" rx="3" fill="#FFFFFF" stroke="#94A3B8" stroke-width="0.8" />
+      <text x="0" y="3.5" font-size="9.5" font-weight="bold" fill="#0F172A" text-anchor="middle">id_categorie</text>
+    </g>
+    <line x1="650" y1="690" x2="650" y2="590" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)" />
+    <g transform="translate(650.0,632.0)">
+      <rect x="-71.0" y="-8" width="142.0" height="16" rx="3" fill="#FFFFFF" stroke="#94A3B8" stroke-width="0.8" />
+      <text x="0" y="3.5" font-size="9.5" font-weight="bold" fill="#0F172A" text-anchor="middle">id_utilisateur (1:1)</text>
+    </g>
+    <line x1="880" y1="780" x2="800" y2="780" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)" />
+    <g transform="translate(840.0,772.0)">
+      <rect x="-35.25" y="-8" width="70.5" height="16" rx="3" fill="#FFFFFF" stroke="#94A3B8" stroke-width="0.8" />
+      <text x="0" y="3.5" font-size="9.5" font-weight="bold" fill="#0F172A" text-anchor="middle">id_panier</text>
+    </g>
+    <line x1="1120" y1="780" x2="1180" y2="780" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)" />
+    <g transform="translate(1150.0,772.0)">
+      <rect x="-48.25" y="-8" width="96.5" height="16" rx="3" fill="#FFFFFF" stroke="#94A3B8" stroke-width="0.8" />
+      <text x="0" y="3.5" font-size="9.5" font-weight="bold" fill="#0F172A" text-anchor="middle">id_medicament</text>
+    </g>
+    <line x1="380" y1="680" x2="500" y2="590" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)" />
+    <g transform="translate(440.0,627.0)">
+      <rect x="-51.5" y="-8" width="103.0" height="16" rx="3" fill="#FFFFFF" stroke="#94A3B8" stroke-width="0.8" />
+      <text x="0" y="3.5" font-size="9.5" font-weight="bold" fill="#0F172A" text-anchor="middle">id_utilisateur</text>
+    </g>
+    <line x1="580" y1="1120" x2="380" y2="1050" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)" />
+    <g transform="translate(480.0,1077.0)">
+      <rect x="-41.75" y="-8" width="83.5" height="16" rx="3" fill="#FFFFFF" stroke="#94A3B8" stroke-width="0.8" />
+      <text x="0" y="3.5" font-size="9.5" font-weight="bold" fill="#0F172A" text-anchor="middle">id_commande</text>
+    </g>
+    <line x1="920" y1="1150" x2="1220" y2="1010" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)" />
+    <g transform="translate(1070.0,1072.0)">
+      <rect x="-48.25" y="-8" width="96.5" height="16" rx="3" fill="#FFFFFF" stroke="#94A3B8" stroke-width="0.8" />
+      <text x="0" y="3.5" font-size="9.5" font-weight="bold" fill="#0F172A" text-anchor="middle">id_medicament</text>
+    </g>
+  </g>
+
+  <!-- Tables -->
+  <g id="tables">
+    <rect x="60" y="60" width="270" height="220" rx="4" fill="#FFFFFF" stroke="#334155" stroke-width="1.5" />
+    <text x="195.0" y="84" font-size="13" font-weight="bold" fill="#0F172A" text-anchor="middle">roles</text>
+    <line x1="60" y1="94" x2="330" y2="94" stroke="#334155" stroke-width="1.5" />
+    <text x="74" y="114" font-size="11" font-weight="bold" fill="#0F172A" text-decoration="underline"># id_role : INT UNSIGNED [PK]</text>
+    <text x="74" y="134" font-size="11" fill="#0F172A"><tspan font-weight="bold">code</tspan> : VARCHAR(20)</text>
+    <text x="74" y="154" font-size="11" fill="#0F172A"><tspan font-weight="bold">libelle</tspan> : VARCHAR(50)</text>
+    <text x="74" y="174" font-size="11" fill="#0F172A"><tspan font-weight="bold">description</tspan> : VARCHAR(255)</text>
+    <text x="74" y="194" font-size="11" fill="#0F172A"><tspan font-weight="bold">created_at</tspan> : TIMESTAMP</text>
+    <rect x="480" y="60" width="350" height="530" rx="4" fill="#FFFFFF" stroke="#334155" stroke-width="1.5" />
+    <text x="655.0" y="84" font-size="13" font-weight="bold" fill="#0F172A" text-anchor="middle">utilisateurs</text>
+    <line x1="480" y1="94" x2="830" y2="94" stroke="#334155" stroke-width="1.5" />
+    <text x="494" y="114" font-size="11" font-weight="bold" fill="#0F172A" text-decoration="underline"># id_utilisateur : INT UNSIGNED [PK]</text>
+    <text x="494" y="134" font-size="11" font-weight="bold" fill="#334155"># id_role : INT UNSIGNED [FK]</text>
+    <text x="494" y="154" font-size="11" fill="#0F172A"><tspan font-weight="bold">nom</tspan> : VARCHAR(50)</text>
+    <text x="494" y="174" font-size="11" fill="#0F172A"><tspan font-weight="bold">prenom</tspan> : VARCHAR(50)</text>
+    <text x="494" y="194" font-size="11" fill="#0F172A"><tspan font-weight="bold">email</tspan> : VARCHAR(100)</text>
+    <text x="494" y="214" font-size="11" fill="#0F172A"><tspan font-weight="bold">mot_de_passe</tspan> : VARCHAR(255)</text>
+    <text x="494" y="234" font-size="11" fill="#0F172A"><tspan font-weight="bold">telephone</tspan> : VARCHAR(20)</text>
+    <text x="494" y="254" font-size="11" fill="#0F172A"><tspan font-weight="bold">adresse</tspan> : VARCHAR(150)</text>
+    <text x="494" y="274" font-size="11" fill="#0F172A"><tspan font-weight="bold">code_postal</tspan> : VARCHAR(10)</text>
+    <text x="494" y="294" font-size="11" fill="#0F172A"><tspan font-weight="bold">ville</tspan> : VARCHAR(50)</text>
+    <text x="494" y="314" font-size="11" fill="#0F172A"><tspan font-weight="bold">type_profession</tspan> : VARCHAR(50)</text>
+    <text x="494" y="334" font-size="11" fill="#0F172A"><tspan font-weight="bold">numero_rpps</tspan> : VARCHAR(20)</text>
+    <text x="494" y="354" font-size="11" fill="#0F172A"><tspan font-weight="bold">doit_changer_mdp</tspan> : BOOLEAN</text>
+    <text x="494" y="374" font-size="11" fill="#0F172A"><tspan font-weight="bold">actif</tspan> : BOOLEAN</text>
+    <text x="494" y="394" font-size="11" fill="#0F172A"><tspan font-weight="bold">created_at</tspan> : TIMESTAMP</text>
+    <text x="494" y="414" font-size="11" fill="#0F172A"><tspan font-weight="bold">updated_at</tspan> : TIMESTAMP</text>
+    <rect x="1180" y="60" width="330" height="400" rx="4" fill="#FFFFFF" stroke="#334155" stroke-width="1.5" />
+    <text x="1345.0" y="84" font-size="13" font-weight="bold" fill="#0F172A" text-anchor="middle">fournisseurs</text>
+    <line x1="1180" y1="94" x2="1510" y2="94" stroke="#334155" stroke-width="1.5" />
+    <text x="1194" y="114" font-size="11" font-weight="bold" fill="#0F172A" text-decoration="underline"># id_fournisseur : INT UNSIGNED [PK]</text>
+    <text x="1194" y="134" font-size="11" fill="#0F172A"><tspan font-weight="bold">raison_sociale</tspan> : VARCHAR(100)</text>
+    <text x="1194" y="154" font-size="11" fill="#0F172A"><tspan font-weight="bold">siret</tspan> : VARCHAR(14)</text>
+    <text x="1194" y="174" font-size="11" fill="#0F172A"><tspan font-weight="bold">email_contact</tspan> : VARCHAR(100)</text>
+    <text x="1194" y="194" font-size="11" fill="#0F172A"><tspan font-weight="bold">telephone</tspan> : VARCHAR(20)</text>
+    <text x="1194" y="214" font-size="11" fill="#0F172A"><tspan font-weight="bold">adresse</tspan> : VARCHAR(150)</text>
+    <text x="1194" y="234" font-size="11" fill="#0F172A"><tspan font-weight="bold">code_postal</tspan> : VARCHAR(10)</text>
+    <text x="1194" y="254" font-size="11" fill="#0F172A"><tspan font-weight="bold">ville</tspan> : VARCHAR(50)</text>
+    <text x="1194" y="274" font-size="11" fill="#0F172A"><tspan font-weight="bold">actif</tspan> : BOOLEAN</text>
+    <text x="1194" y="294" font-size="11" fill="#0F172A"><tspan font-weight="bold">created_at</tspan> : TIMESTAMP</text>
+    <text x="1194" y="314" font-size="11" fill="#0F172A"><tspan font-weight="bold">updated_at</tspan> : TIMESTAMP</text>
+    <rect x="1750" y="520" width="270" height="190" rx="4" fill="#FFFFFF" stroke="#334155" stroke-width="1.5" />
+    <text x="1885.0" y="544" font-size="13" font-weight="bold" fill="#0F172A" text-anchor="middle">categories</text>
+    <line x1="1750" y1="554" x2="2020" y2="554" stroke="#334155" stroke-width="1.5" />
+    <text x="1764" y="574" font-size="11" font-weight="bold" fill="#0F172A" text-decoration="underline"># id_categorie : INT UNSIGNED [PK]</text>
+    <text x="1764" y="594" font-size="11" fill="#0F172A"><tspan font-weight="bold">libelle</tspan> : VARCHAR(50)</text>
+    <text x="1764" y="614" font-size="11" fill="#0F172A"><tspan font-weight="bold">description</tspan> : TEXT</text>
+    <text x="1764" y="634" font-size="11" fill="#0F172A"><tspan font-weight="bold">created_at</tspan> : TIMESTAMP</text>
+    <rect x="1180" y="520" width="360" height="490" rx="4" fill="#FFFFFF" stroke="#334155" stroke-width="1.5" />
+    <text x="1360.0" y="544" font-size="13" font-weight="bold" fill="#0F172A" text-anchor="middle">medicaments</text>
+    <line x1="1180" y1="554" x2="1540" y2="554" stroke="#334155" stroke-width="1.5" />
+    <text x="1194" y="574" font-size="11" font-weight="bold" fill="#0F172A" text-decoration="underline"># id_medicament : INT UNSIGNED [PK]</text>
+    <text x="1194" y="594" font-size="11" font-weight="bold" fill="#334155"># id_fournisseur : INT UNSIGNED [FK]</text>
+    <text x="1194" y="614" font-size="11" font-weight="bold" fill="#334155"># id_categorie : INT UNSIGNED [FK]</text>
+    <text x="1194" y="634" font-size="11" font-weight="bold" fill="#334155"># id_admin_validateur : INT UNSIGNED [FK]</text>
+    <text x="1194" y="654" font-size="11" fill="#0F172A"><tspan font-weight="bold">nom</tspan> : VARCHAR(100)</text>
+    <text x="1194" y="674" font-size="11" fill="#0F172A"><tspan font-weight="bold">description</tspan> : TEXT</text>
+    <text x="1194" y="694" font-size="11" fill="#0F172A"><tspan font-weight="bold">image_url</tspan> : VARCHAR(255)</text>
+    <text x="1194" y="714" font-size="11" fill="#0F172A"><tspan font-weight="bold">prix_ht</tspan> : DECIMAL(10,2)</text>
+    <text x="1194" y="734" font-size="11" fill="#0F172A"><tspan font-weight="bold">prix_ttc</tspan> : DECIMAL(10,2)</text>
+    <text x="1194" y="754" font-size="11" fill="#0F172A"><tspan font-weight="bold">taux_tva</tspan> : DECIMAL(5,2)</text>
+    <text x="1194" y="774" font-size="11" fill="#0F172A"><tspan font-weight="bold">quantite_stock</tspan> : INT UNSIGNED</text>
+    <text x="1194" y="794" font-size="11" fill="#0F172A"><tspan font-weight="bold">statut_validation</tspan> : ENUM</text>
+    <text x="1194" y="814" font-size="11" fill="#0F172A"><tspan font-weight="bold">date_validation</tspan> : DATETIME</text>
+    <text x="1194" y="834" font-size="11" fill="#0F172A"><tspan font-weight="bold">commentaire_validation</tspan> : TEXT</text>
+    <text x="1194" y="854" font-size="11" fill="#0F172A"><tspan font-weight="bold">created_at</tspan> : TIMESTAMP</text>
+    <text x="1194" y="874" font-size="11" fill="#0F172A"><tspan font-weight="bold">updated_at</tspan> : TIMESTAMP</text>
+    <rect x="510" y="690" width="290" height="180" rx="4" fill="#FFFFFF" stroke="#334155" stroke-width="1.5" />
+    <text x="655.0" y="714" font-size="13" font-weight="bold" fill="#0F172A" text-anchor="middle">paniers</text>
+    <line x1="510" y1="724" x2="800" y2="724" stroke="#334155" stroke-width="1.5" />
+    <text x="524" y="744" font-size="11" font-weight="bold" fill="#0F172A" text-decoration="underline"># id_panier : INT UNSIGNED [PK]</text>
+    <text x="524" y="764" font-size="11" font-weight="bold" fill="#334155"># id_utilisateur : INT UNSIGNED (UNIQUE) [FK]</text>
+    <text x="524" y="784" font-size="11" fill="#0F172A"><tspan font-weight="bold">created_at</tspan> : TIMESTAMP</text>
+    <text x="524" y="804" font-size="11" fill="#0F172A"><tspan font-weight="bold">updated_at</tspan> : TIMESTAMP</text>
+    <rect x="880" y="700" width="240" height="190" rx="4" fill="#FFFFFF" stroke="#334155" stroke-width="1.5" />
+    <text x="1000.0" y="724" font-size="13" font-weight="bold" fill="#0F172A" text-anchor="middle">lignes_panier</text>
+    <line x1="880" y1="734" x2="1120" y2="734" stroke="#334155" stroke-width="1.5" />
+    <text x="894" y="754" font-size="11" font-weight="bold" fill="#0F172A" text-decoration="underline"># id_panier : INT UNSIGNED [PK, FK]</text>
+    <text x="894" y="774" font-size="11" font-weight="bold" fill="#0F172A" text-decoration="underline"># id_medicament : INT UNSIGNED [PK, FK]</text>
+    <text x="894" y="794" font-size="11" fill="#0F172A"><tspan font-weight="bold">quantite</tspan> : INT UNSIGNED</text>
+    <text x="894" y="814" font-size="11" fill="#0F172A"><tspan font-weight="bold">date_ajout</tspan> : TIMESTAMP</text>
+    <rect x="60" y="680" width="340" height="410" rx="4" fill="#FFFFFF" stroke="#334155" stroke-width="1.5" />
+    <text x="230.0" y="704" font-size="13" font-weight="bold" fill="#0F172A" text-anchor="middle">commandes</text>
+    <line x1="60" y1="714" x2="400" y2="714" stroke="#334155" stroke-width="1.5" />
+    <text x="74" y="734" font-size="11" font-weight="bold" fill="#0F172A" text-decoration="underline"># id_commande : INT UNSIGNED [PK]</text>
+    <text x="74" y="754" font-size="11" font-weight="bold" fill="#334155"># id_utilisateur : INT UNSIGNED [FK]</text>
+    <text x="74" y="774" font-size="11" fill="#0F172A"><tspan font-weight="bold">numero_commande</tspan> : VARCHAR(50)</text>
+    <text x="74" y="794" font-size="11" fill="#0F172A"><tspan font-weight="bold">date_commande</tspan> : DATETIME</text>
+    <text x="74" y="814" font-size="11" fill="#0F172A"><tspan font-weight="bold">statut_commande</tspan> : ENUM</text>
+    <text x="74" y="834" font-size="11" fill="#0F172A"><tspan font-weight="bold">montant_total_ht</tspan> : DECIMAL(10,2)</text>
+    <text x="74" y="854" font-size="11" fill="#0F172A"><tspan font-weight="bold">montant_total_ttc</tspan> : DECIMAL(10,2)</text>
+    <text x="74" y="874" font-size="11" fill="#0F172A"><tspan font-weight="bold">adresse_livraison</tspan> : VARCHAR(150)</text>
+    <text x="74" y="894" font-size="11" fill="#0F172A"><tspan font-weight="bold">code_postal_livraison</tspan> : VARCHAR(10)</text>
+    <text x="74" y="914" font-size="11" fill="#0F172A"><tspan font-weight="bold">ville_livraison</tspan> : VARCHAR(50)</text>
+    <text x="74" y="934" font-size="11" fill="#0F172A"><tspan font-weight="bold">created_at</tspan> : TIMESTAMP</text>
+    <text x="74" y="954" font-size="11" fill="#0F172A"><tspan font-weight="bold">updated_at</tspan> : TIMESTAMP</text>
+    <rect x="580" y="1070" width="340" height="200" rx="4" fill="#FFFFFF" stroke="#334155" stroke-width="1.5" />
+    <text x="750.0" y="1094" font-size="13" font-weight="bold" fill="#0F172A" text-anchor="middle">lignes_commande</text>
+    <line x1="580" y1="1104" x2="920" y2="1104" stroke="#334155" stroke-width="1.5" />
+    <text x="594" y="1124" font-size="11" font-weight="bold" fill="#0F172A" text-decoration="underline"># id_commande : INT UNSIGNED [PK, FK]</text>
+    <text x="594" y="1144" font-size="11" font-weight="bold" fill="#0F172A" text-decoration="underline"># id_medicament : INT UNSIGNED [PK, FK]</text>
+    <text x="594" y="1164" font-size="11" fill="#0F172A"><tspan font-weight="bold">quantite_commandee</tspan> : INT UNSIGNED</text>
+    <text x="594" y="1184" font-size="11" fill="#0F172A"><tspan font-weight="bold">prix_unitaire_ht</tspan> : DECIMAL(10,2)</text>
+    <text x="594" y="1204" font-size="11" fill="#0F172A"><tspan font-weight="bold">taux_tva</tspan> : DECIMAL(5,2)</text>
+  </g>
+
+  <!-- Cartouche MLD -->
+  <g id="cartouche">
+    <rect x="1600" y="950" width="420" height="270" rx="4" fill="#FFFFFF" stroke="#334155" stroke-width="1.5" />
+    <text x="1620" y="978" font-size="12" font-weight="bold" fill="#0F172A">SCHEMA RELATIONNEL MYSQL (MLD)</text>
+    <line x1="1620" y1="988" x2="2000" y2="988" stroke="#334155" stroke-width="1.2" />
+    
+    <text x="1620" y="1012" font-size="10.5" fill="#64748B">Base de donnees : <tspan font-weight="bold" fill="#0F172A">gsb_pharmacie</tspan></text>
+    <text x="1620" y="1032" font-size="10.5" fill="#64748B">Moteur : <tspan font-weight="bold" fill="#0F172A">InnoDB (MySQL 8.0+ / MariaDB)</tspan></text>
+    <text x="1620" y="1052" font-size="10.5" fill="#64748B">Charset : <tspan font-weight="bold" fill="#0F172A">utf8mb4_unicode_ci</tspan></text>
+    <text x="1620" y="1072" font-size="10.5" fill="#64748B">Architecture : <tspan font-weight="bold" fill="#0F172A">B2B Multi-fournisseurs</tspan></text>
+
+    <line x1="1620" y1="1092" x2="2000" y2="1092" stroke="#CBD5E1" stroke-width="1" />
+
+    <text x="1620" y="1116" font-size="11" font-weight="bold" fill="#0F172A">CONVENTIONS DU SCHEMA :</text>
+    <text x="1620" y="1138" font-size="10.5" fill="#334155">• <u><b>Souligne</b></u> : Cle primaire (PK)</text>
+    <text x="1620" y="1158" font-size="10.5" fill="#334155">• <b>#Prefixe</b> : Cle etrangere (FK)</text>
+    <text x="1620" y="1178" font-size="10.5" fill="#334155">• Fleche : Relation referentielle FK → PK</text>
+    <text x="1620" y="1198" font-size="10.5" fill="#334155">• L'utilisateur commande chez plusieurs laboratoires</text>
+  </g>
+
+</svg>
