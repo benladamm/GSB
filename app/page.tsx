@@ -28,6 +28,7 @@ export default function HomePage() {
   const [selectedCat, setSelectedCat] = useState<number | null>(null);
   const [addingId, setAddingId] = useState<number | null>(null);
   const [addFeedback, setAddFeedback] = useState<string | null>(null);
+  const [medsError, setMedsError] = useState<string | null>(null);
 
   // Onglet pour le bloc d'inscription / accès
   const [activeTab, setActiveTab] = useState<'pharmacie' | 'laboratoire'>('pharmacie');
@@ -41,20 +42,28 @@ export default function HomePage() {
     try {
       const res = await fetch('/api/categories');
       const data = await res.json();
-      if (data.categories) setCategories(data.categories);
-    } catch (e) {
+      if (res.ok && data.categories) {
+        setCategories(data.categories);
+      }
+    } catch (e: any) {
       console.error(e);
     }
   };
 
   const fetchMedicaments = async () => {
     setLoadingMeds(true);
+    setMedsError(null);
     try {
       const res = await fetch('/api/medicaments?statut=VALIDE');
       const data = await res.json();
-      if (data.medicaments) setMedicaments(data.medicaments);
-    } catch (e) {
+      if (res.ok && data.medicaments) {
+        setMedicaments(data.medicaments);
+      } else {
+        setMedsError(data.error || 'Erreur lors de la récupération des médicaments');
+      }
+    } catch (e: any) {
       console.error(e);
+      setMedsError('Impossible de joindre le serveur Express ou la base de données MySQL');
     } finally {
       setLoadingMeds(false);
     }
@@ -484,6 +493,16 @@ export default function HomePage() {
           </div>
         </div>
 
+        {medsError && (
+          <div className="bg-red-50 border border-red-300 text-red-800 px-5 py-3.5 rounded-xl text-xs flex items-center gap-3 shadow-sm">
+            <span className="text-base">⚠️</span>
+            <div>
+              <span className="font-bold">Erreur de communication : </span>
+              <span>{medsError}</span>
+            </div>
+          </div>
+        )}
+
         {/* Tableau Catalogue selon DESIGN.md (en-têtes en or Cormorant, bordure 40px 8px 40px 8px) */}
         <div className="bg-[#fffdf7] border-[1.5px] border-[#b8934a] rounded-[40px_8px_40px_8px] overflow-hidden shadow-art-nouveau">
           <div className="overflow-x-auto">
@@ -504,6 +523,13 @@ export default function HomePage() {
                   <tr>
                     <td colSpan={7} className="py-8 text-center text-[#7a7458]">
                       Chargement des médicaments validés...
+                    </td>
+                  </tr>
+                ) : medsError ? (
+                  <tr>
+                    <td colSpan={7} className="py-8 text-center text-red-600 bg-red-50/50">
+                      <div className="font-semibold">{medsError}</div>
+                      <div className="text-[11px] text-red-500 mt-1">Vérifiez que le serveur Express et la base de données MySQL sont actifs.</div>
                     </td>
                   </tr>
                 ) : filteredMeds.length === 0 ? (

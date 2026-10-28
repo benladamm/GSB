@@ -33,16 +33,17 @@ export default function OrderDetailPage({ params }: { params: { id: string } }) 
 
   const loadOrderDetail = async () => {
     setLoading(true);
+    setError(null);
     try {
       const res = await fetch(`/api/commandes/${params.id}`);
+      const data = await res.json();
       if (res.ok) {
-        const data = await res.json();
         setCommande(data.commande);
       } else {
-        setError('Impossible de charger les détails de cette commande.');
+        setError(data.error || 'Impossible de charger les détails de cette commande.');
       }
     } catch (e: any) {
-      setError(e.message);
+      setError('Impossible de contacter le serveur Express ou la base de données MySQL.');
     } finally {
       setLoading(false);
     }

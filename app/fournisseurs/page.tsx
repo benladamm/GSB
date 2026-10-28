@@ -20,6 +20,7 @@ export default function FournisseursPage() {
   const [fournisseurs, setFournisseurs] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
   // Formulaire d'ajout de laboratoire
   const [raisonSociale, setRaisonSociale] = useState('');
@@ -38,12 +39,18 @@ export default function FournisseursPage() {
 
   const loadFournisseurs = async () => {
     setLoading(true);
+    setErrorMsg(null);
     try {
       const res = await fetch('/api/fournisseurs');
       const data = await res.json();
-      if (data.fournisseurs) setFournisseurs(data.fournisseurs);
-    } catch (e) {
+      if (res.ok && data.fournisseurs) {
+        setFournisseurs(data.fournisseurs);
+      } else {
+        setErrorMsg(data.error || 'Erreur lors du chargement des laboratoires');
+      }
+    } catch (e: any) {
       console.error(e);
+      setErrorMsg('Impossible de joindre le serveur API Express ou la base de données MySQL.');
     } finally {
       setLoading(false);
     }
@@ -121,6 +128,17 @@ export default function FournisseursPage() {
           <span>Référencer un laboratoire</span>
         </button>
       </div>
+
+      {/* Message d'erreur */}
+      {errorMsg && (
+        <div className="bg-red-50 border border-red-300 text-red-800 p-4 rounded-xl text-xs flex items-center gap-3 shadow-sm">
+          <AlertCircle className="w-5 h-5 text-red-600 shrink-0" />
+          <div>
+            <span className="font-bold">Erreur : </span>
+            <span>{errorMsg}</span>
+          </div>
+        </div>
+      )}
 
       {/* Grille des laboratoires */}
       {loading ? (

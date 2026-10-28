@@ -42,6 +42,7 @@ export default function AdminPage() {
 
   // Notification Toast
   const [toast, setToast] = useState<string | null>(null);
+  const [adminError, setAdminError] = useState<string | null>(null);
 
   // Modale Nouveau Médicament
   const [showAddMedModal, setShowAddMedModal] = useState(false);
@@ -67,9 +68,9 @@ export default function AdminPage() {
       const [resC, resF] = await Promise.all([fetch('/api/categories'), fetch('/api/fournisseurs')]);
       const dataC = await resC.json();
       const dataF = await resF.json();
-      if (dataC.categories) setCategories(dataC.categories);
-      if (dataF.fournisseurs) setFournisseurs(dataF.fournisseurs);
-    } catch (e) {
+      if (resC.ok && dataC.categories) setCategories(dataC.categories);
+      if (resF.ok && dataF.fournisseurs) setFournisseurs(dataF.fournisseurs);
+    } catch (e: any) {
       console.error(e);
     }
   };
@@ -78,9 +79,14 @@ export default function AdminPage() {
     try {
       const res = await fetch('/api/admin/stats');
       const data = await res.json();
-      if (data.stats) setStats(data.stats);
-    } catch (e) {
+      if (res.ok && data.stats) {
+        setStats(data.stats);
+      } else {
+        setAdminError(data.error || 'Erreur lors du chargement des statistiques');
+      }
+    } catch (e: any) {
       console.error(e);
+      setAdminError('Impossible de joindre le serveur Express ou la base de données MySQL.');
     }
   };
 
@@ -89,9 +95,14 @@ export default function AdminPage() {
     try {
       const res = await fetch('/api/medicaments?statut=ALL');
       const data = await res.json();
-      if (data.medicaments) setAllMedicaments(data.medicaments);
-    } catch (e) {
+      if (res.ok && data.medicaments) {
+        setAllMedicaments(data.medicaments);
+      } else {
+        setAdminError(data.error || 'Erreur lors du chargement des médicaments');
+      }
+    } catch (e: any) {
       console.error(e);
+      setAdminError('Impossible de joindre le serveur Express ou la base de données MySQL.');
     } finally {
       setLoadingMeds(false);
     }
@@ -102,9 +113,14 @@ export default function AdminPage() {
     try {
       const res = await fetch('/api/commandes');
       const data = await res.json();
-      if (data.commandes) setCommandes(data.commandes);
-    } catch (e) {
+      if (res.ok && data.commandes) {
+        setCommandes(data.commandes);
+      } else {
+        setAdminError(data.error || 'Erreur lors du chargement des commandes');
+      }
+    } catch (e: any) {
       console.error(e);
+      setAdminError('Impossible de joindre le serveur Express ou la base de données MySQL.');
     } finally {
       setLoadingCmds(false);
     }
@@ -115,9 +131,14 @@ export default function AdminPage() {
     try {
       const res = await fetch('/api/admin/users');
       const data = await res.json();
-      if (data.users) setUsersList(data.users);
-    } catch (e) {
+      if (res.ok && data.users) {
+        setUsersList(data.users);
+      } else {
+        setAdminError(data.error || 'Erreur lors du chargement des utilisateurs');
+      }
+    } catch (e: any) {
       console.error(e);
+      setAdminError('Impossible de joindre le serveur Express ou la base de données MySQL.');
     } finally {
       setLoadingUsers(false);
     }
@@ -258,6 +279,17 @@ export default function AdminPage() {
           <span className="text-[#b8934a]">➔</span>
         </Link>
       </div>
+
+      {/* Alerte Erreur Administrateur */}
+      {adminError && (
+        <div className="bg-red-50 border border-red-300 text-red-800 p-4 rounded-xl text-xs flex items-center gap-3 shadow-sm">
+          <AlertCircle className="w-5 h-5 text-red-600 shrink-0" />
+          <div>
+            <span className="font-bold">Erreur de communication : </span>
+            <span>{adminError}</span>
+          </div>
+        </div>
+      )}
 
       {/* Navigation par Onglets */}
       <div className="flex items-center gap-2 border-b border-[#e6dab8] overflow-x-auto pb-1">

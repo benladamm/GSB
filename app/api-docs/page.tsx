@@ -188,13 +188,13 @@ export default function ApiDocsPage() {
       <div className="border-b border-[#e6dab8] pb-6 space-y-2">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#fffdf7] border border-[#e6dab8] text-xs font-semibold text-[#557552]">
           <Database className="w-3.5 h-3.5 text-[#b8934a]" />
-          <span>Épreuve E4 / E6 — BTS SIO SLAM</span>
+          <span>Épreuve E4 / E6 — BTS SIO SLAM (Architecture 3-Tiers)</span>
         </div>
         <h1 className="font-serif text-3xl sm:text-4xl font-bold text-[#557552]">
-          Documentation & Console Interactive API REST
+          Documentation & Console Interactive API REST Express
         </h1>
         <p className="text-xs text-[#7a7458] max-w-2xl">
-          Toutes les fonctionnalités de la place de marché GSB PharmaLink sont exposées sous forme d'une API RESTful normalisée (JSON, verbes HTTP, codes d'état standardisés).
+          L'ensemble des services métiers de la plateforme GSB PharmaLink est hébergé sur un serveur <strong>Express Node.js indépendant (port 3001)</strong> connecté à la base de données relationnelle <strong>MySQL DimDams Cloud SSL</strong>.
         </p>
       </div>
 

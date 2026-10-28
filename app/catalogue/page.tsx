@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useApp } from '@/components/AppContext';
-import { Search, ShoppingBag, Filter, CheckCircle2, Info, Building2, Tag, Plus, Minus, X } from 'lucide-react';
+import { Search, ShoppingBag, Filter, CheckCircle2, Info, Building2, Tag, Plus, Minus, X, AlertCircle } from 'lucide-react';
 
 export default function CataloguePage() {
   const { user, refreshCartCount } = useApp();
@@ -21,6 +21,7 @@ export default function CataloguePage() {
   const [quantities, setQuantities] = useState<Record<number, number>>({});
   const [toastMessage, setToastMessage] = useState<string | null>(null);
   const [selectedProduct, setSelectedProduct] = useState<any | null>(null);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
   useEffect(() => {
     loadData();
@@ -28,6 +29,7 @@ export default function CataloguePage() {
 
   const loadData = async () => {
     setLoading(true);
+    setErrorMsg(null);
     try {
       const [resMeds, resCats, resFours] = await Promise.all([
         fetch('/api/medicaments?statut=VALIDE'),
@@ -38,7 +40,12 @@ export default function CataloguePage() {
       const dataCats = await resCats.json();
       const dataFours = await resFours.json();
 
-      if (dataMeds.medicaments) setMedicaments(dataMeds.medicaments);
+      if (!resMeds.ok) {
+        setErrorMsg(dataMeds.error || 'Erreur lors du chargement des médicaments');
+      } else if (dataMeds.medicaments) {
+        setMedicaments(dataMeds.medicaments);
+      }
+
       if (dataCats.categories) setCategories(dataCats.categories);
       if (dataFours.fournisseurs) setFournisseurs(dataFours.fournisseurs);
 
@@ -48,8 +55,9 @@ export default function CataloguePage() {
         initialQtys[m.id_medicament] = 10;
       });
       setQuantities(initialQtys);
-    } catch (e) {
+    } catch (e: any) {
       console.error(e);
+      setErrorMsg('Impossible de contacter le serveur Express ou la base de données MySQL.');
     } finally {
       setLoading(false);
     }
@@ -186,6 +194,17 @@ export default function CataloguePage() {
           </div>
         </div>
       </div>
+
+      {/* Alerte Erreur */}
+      {errorMsg && (
+        <div className="bg-red-50 border border-red-300 text-red-800 p-4 rounded-xl text-xs flex items-center gap-3 shadow-sm">
+          <AlertCircle className="w-5 h-5 text-red-600 shrink-0" />
+          <div>
+            <span className="font-bold">Erreur de chargement : </span>
+            <span>{errorMsg}</span>
+          </div>
+        </div>
+      )}
 
       {/* Grille des médicaments */}
       {loading ? (

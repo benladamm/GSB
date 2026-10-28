@@ -19,6 +19,7 @@ export default function CommandesPage() {
   const { user } = useApp();
   const [commandes, setCommandes] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
   useEffect(() => {
     if (user) {
@@ -28,14 +29,18 @@ export default function CommandesPage() {
 
   const loadCommandes = async () => {
     setLoading(true);
+    setErrorMsg(null);
     try {
       const res = await fetch('/api/commandes');
+      const data = await res.json();
       if (res.ok) {
-        const data = await res.json();
         setCommandes(data.commandes || []);
+      } else {
+        setErrorMsg(data.error || 'Erreur lors de la récupération des commandes');
       }
-    } catch (e) {
+    } catch (e: any) {
       console.error(e);
+      setErrorMsg('Impossible de joindre le serveur API Express ou la base de données MySQL.');
     } finally {
       setLoading(false);
     }
@@ -116,6 +121,16 @@ export default function CommandesPage() {
           Suivi des bons de commande, factures et statuts d'acheminement
         </p>
       </div>
+
+      {errorMsg && (
+        <div className="bg-red-50 border border-red-300 text-red-800 p-4 rounded-xl text-xs flex items-center gap-3 shadow-sm">
+          <AlertCircle className="w-5 h-5 text-red-600 shrink-0" />
+          <div>
+            <span className="font-bold">Erreur : </span>
+            <span>{errorMsg}</span>
+          </div>
+        </div>
+      )}
 
       {loading ? (
         <div className="text-center py-20 text-[#7a7458] text-sm">

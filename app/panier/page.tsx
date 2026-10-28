@@ -36,10 +36,11 @@ export default function PanierPage() {
 
   const loadPanier = async () => {
     setLoading(true);
+    setErrorMsg(null);
     try {
       const res = await fetch('/api/panier');
+      const data = await res.json();
       if (res.ok) {
-        const data = await res.json();
         setPanier(data);
         if (user) {
           // Préremplir avec l'adresse du professionnel
@@ -47,9 +48,12 @@ export default function PanierPage() {
           setCodePostal('44000');
           setVille('Nantes');
         }
+      } else {
+        setErrorMsg(data.error || 'Erreur lors du chargement du panier');
       }
-    } catch (e) {
+    } catch (e: any) {
       console.error(e);
+      setErrorMsg('Impossible de joindre le serveur API Express ou la base de données MySQL.');
     } finally {
       setLoading(false);
     }
